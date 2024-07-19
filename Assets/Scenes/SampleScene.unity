@@ -1390,6 +1390,7 @@ MonoBehaviour:
   _playerStats: {fileID: 697647774}
   _healthColorChangeBreakPoint: 0.4
   _lowHealthColor: {r: 1, g: 0, b: 0, a: 1}
+  _defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1378930018
 GameObject:
   m_ObjectHideFlags: 0

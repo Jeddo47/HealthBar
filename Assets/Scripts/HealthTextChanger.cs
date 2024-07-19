@@ -8,6 +8,7 @@ public class HealthTextChanger : MonoBehaviour
     [SerializeField] private CharacterStats _playerStats;
     [SerializeField] private float _healthColorChangeBreakPoint;
     [SerializeField] private Color _lowHealthColor;
+    [SerializeField] private Color _defaultColor;
 
     private void Awake()
     {
@@ -24,13 +25,17 @@ public class HealthTextChanger : MonoBehaviour
         _playerStats.HealthChanged -= ChangeHealth;
     }
 
-    private void ChangeHealth() 
+    private void ChangeHealth()
     {
         _currentHealth.text = _playerStats.HitPoints.ToString();
-        
-        if (_playerStats.HitPoints/_playerStats.MaxHitPoints <= _healthColorChangeBreakPoint) 
+
+        if (_playerStats.HitPoints / _playerStats.MaxHitPoints <= _healthColorChangeBreakPoint)
         {
-            _currentHealth.color = _lowHealthColor;        
+            _currentHealth.color = _lowHealthColor;
+        }
+        else
+        {
+            _currentHealth.color = _defaultColor;
         }
     }
 }
