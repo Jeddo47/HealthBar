@@ -2,24 +2,13 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBarSmoothChanger : MonoBehaviour
-{
-    [SerializeField] private CharacterStats _playerStats;
+public class HealthBarSmoothChanger : GeneralHealthDisplayer
+{    
     [SerializeField] private Slider _healthBar;
     [SerializeField] private float _healthBarFillDelay;
     [SerializeField] private float _healthBarFillSpeed;
 
-    private void OnEnable()
-    {
-        _playerStats.HealthChanged += ChangeHealthBar;
-    }
-
-    private void OnDisable()
-    {
-        _playerStats.HealthChanged -= ChangeHealthBar;
-    }
-
-    public void ChangeHealthBar()
+    protected override void ChangeHealthDisplay()
     {
         StartCoroutine(HealthBarFill());
     }

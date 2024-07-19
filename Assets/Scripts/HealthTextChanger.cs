@@ -1,11 +1,10 @@
 using TMPro;
 using UnityEngine;
 
-public class HealthTextChanger : MonoBehaviour
+public class HealthTextChanger : GeneralHealthDisplayer
 {
     [SerializeField] private TMP_Text _currentHealth;
     [SerializeField] private TMP_Text _maxHealth;
-    [SerializeField] private CharacterStats _playerStats;
     [SerializeField] private float _healthColorChangeBreakPoint;
     [SerializeField] private Color _lowHealthColor;
     [SerializeField] private Color _defaultColor;
@@ -15,17 +14,7 @@ public class HealthTextChanger : MonoBehaviour
         _maxHealth.text = _playerStats.MaxHitPoints.ToString();
     }
 
-    private void OnEnable()
-    {
-        _playerStats.HealthChanged += ChangeHealth;
-    }
-
-    private void OnDisable()
-    {
-        _playerStats.HealthChanged -= ChangeHealth;
-    }
-
-    private void ChangeHealth()
+    protected override void ChangeHealthDisplay()
     {
         _currentHealth.text = _playerStats.HitPoints.ToString();
 

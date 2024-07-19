@@ -1,23 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBarChanger : MonoBehaviour
+public class HealthBarChanger : GeneralHealthDisplayer
 {
-    [SerializeField] private CharacterStats _playerStats;
     [SerializeField] private Slider _healthBar;
 
-    private void OnEnable()
+    protected override void ChangeHealthDisplay()
     {
-        _playerStats.HealthChanged += ChangeHealthBar;
-    }
-
-    private void OnDisable()
-    {
-        _playerStats.HealthChanged -= ChangeHealthBar;
-    }
-
-    public void ChangeHealthBar() 
-    {
-        _healthBar.value = _playerStats.HitPoints/_playerStats.MaxHitPoints;    
+        _healthBar.value = _playerStats.HitPoints / _playerStats.MaxHitPoints;
     }
 }
