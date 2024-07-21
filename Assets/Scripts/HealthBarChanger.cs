@@ -7,6 +7,6 @@ public class HealthBarChanger : GeneralHealthDisplayer
 
     protected override void ChangeHealthDisplay()
     {
-        _healthBar.value = _playerStats.HitPoints / _playerStats.MaxHitPoints;
+        _healthBar.value = PlayerStats.HitPoints / PlayerStats.MaxHitPoints;
     }
 }

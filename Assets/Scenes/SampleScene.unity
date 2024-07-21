@@ -787,10 +787,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32f16cc7cb543e46b6dc0a515fd71cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerStats: {fileID: 697647774}
+  PlayerStats: {fileID: 697647774}
   _healthBar: {fileID: 725968164}
-  _healthBarFillDelay: 0.05
-  _healthBarFillSpeed: 0.01
+  _healthBarFillSpeed: 0.1
 --- !u!1 &752943524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1385,7 +1384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d57786be5ed8564ba3866654a40f2c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerStats: {fileID: 697647774}
+  PlayerStats: {fileID: 697647774}
   _currentHealth: {fileID: 1323667520}
   _maxHealth: {fileID: 1539312088}
   _healthColorChangeBreakPoint: 0.4
@@ -1676,7 +1675,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1480444602}
-  - component: {fileID: 1480444603}
   m_Layer: 5
   m_Name: Health
   m_TagString: Untagged
@@ -1707,19 +1705,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1480444603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1480444601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 572f10d0616dd9e4993d4e0f261b7218, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerStats: {fileID: 697647774}
 --- !u!1 &1493540333
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,7 +1809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a874602d3f5d1a54c85499c892a1eb71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerStats: {fileID: 697647774}
+  PlayerStats: {fileID: 697647774}
   _healthBar: {fileID: 1493540336}
 --- !u!1 &1539312086
 GameObject:

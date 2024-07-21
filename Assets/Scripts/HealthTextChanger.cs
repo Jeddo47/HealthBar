@@ -11,14 +11,14 @@ public class HealthTextChanger : GeneralHealthDisplayer
 
     private void Awake()
     {
-        _maxHealth.text = _playerStats.MaxHitPoints.ToString();
+        _maxHealth.text = PlayerStats.MaxHitPoints.ToString();
     }
 
     protected override void ChangeHealthDisplay()
     {
-        _currentHealth.text = _playerStats.HitPoints.ToString();
+        _currentHealth.text = PlayerStats.HitPoints.ToString();
 
-        if (_playerStats.HitPoints / _playerStats.MaxHitPoints <= _healthColorChangeBreakPoint)
+        if (PlayerStats.HitPoints / PlayerStats.MaxHitPoints <= _healthColorChangeBreakPoint)
         {
             _currentHealth.color = _lowHealthColor;
         }

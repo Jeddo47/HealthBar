@@ -1,18 +1,18 @@
 using UnityEngine;
 
-public class GeneralHealthDisplayer : MonoBehaviour
+public abstract class GeneralHealthDisplayer : MonoBehaviour
 {
-    [SerializeField] protected CharacterStats _playerStats;
+    [SerializeField] protected CharacterStats PlayerStats;
 
     private void OnEnable()
     {
-        _playerStats.HealthChanged += ChangeHealthDisplay;
+        PlayerStats.HealthChanged += ChangeHealthDisplay;
     }
 
     private void OnDisable()
     {
-        _playerStats.HealthChanged -= ChangeHealthDisplay;
+        PlayerStats.HealthChanged -= ChangeHealthDisplay;
     }
 
-    protected virtual void ChangeHealthDisplay() { }
+    protected abstract void ChangeHealthDisplay(); 
 }
